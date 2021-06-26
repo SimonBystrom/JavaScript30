@@ -65,7 +65,11 @@
 
     function handleUpdate() {
       const suffix = this.dataset.sizing || '';
-      document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix)
+      if(this.name != 'blur'){
+        document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix)
+      } else {
+        document.documentElement.style.setProperty(`--${this.name}`, (this.value / 10) + suffix)
+      }
 
     }
 
